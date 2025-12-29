@@ -54,6 +54,12 @@ nav = [
         "syntax/structure.md",
         "syntax/comments.md",
         "syntax/special-functions.md",
+    ]},
+    {"Правила стилей" = [
+        "style-rules/index.md",
+        "style-rules/declarations.md",
+        "style-rules/parent-selector.md",
+        "style-rules/placeholder-selectors.md",
     ]}
 ]
 
@@ -281,7 +287,7 @@ toggle.name = "Светлый режим"
 # of suitably licensed fonts. There are options for a normal text font and for
 # a monospaced font used in code blocks.
 # ----------------------------------------------------------------------------
-#[project.theme.font]
+[project.theme.font]
 text = "Inter"
 code = "Jetbrains Mono"
 
@@ -300,13 +306,13 @@ code = "Jetbrains Mono"
 # - https://zensical.org/docs/setup/logo-and-icons
 # - https://zensical.org/docs/authoring/icons-emojis/#search
 # ----------------------------------------------------------------------------
-#[project.theme.icon]
-logo = "lucide/smile"
+[project.theme.icon]
+logo = "lucide/webhook"
 repo = "lucide/smile"
 
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
-#[[project.extra.social]]
+[[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://dragomano.github.io/dart-sass-docs-russian"
