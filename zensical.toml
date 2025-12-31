@@ -60,7 +60,16 @@ nav = [
         "style-rules/declarations.md",
         "style-rules/parent-selector.md",
         "style-rules/placeholder-selectors.md",
-    ]}
+    ]},
+    {"Переменные" = "variables/index.md"},
+    {"Интерполяция" = "interpolation/index.md"},
+    {"At-правила" = [
+        "at-rules/index.md",
+        "at-rules/use.md",
+        "at-rules/forward.md",
+        "at-rules/import.md",
+        "at-rules/mixin.md",
+    ]},
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize
