@@ -58,6 +58,19 @@ icon: lucide/at-sign
       @include horizontal-list
     ```
 
+```css title="CSS"
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-left: -2px;
+  margin-right: 2em;
+}
+```
+
 </div>
 
 !!! note "Примечание"
@@ -98,6 +111,15 @@ icon: lucide/at-sign
     .sidebar
       @include rtl(float, left, right)
     ```
+
+```css title="CSS"
+.sidebar {
+  float: left;
+}
+[dir=rtl] .sidebar {
+  float: right;
+}
+```
 
 </div>
 
@@ -148,6 +170,17 @@ icon: lucide/at-sign
       @include replace-text(url("/images/mail.svg"), 0)
     ```
 
+```css title="CSS"
+.mail-icon {
+  text-indent: -99999em;
+  overflow: hidden;
+  text-align: left;
+  background-image: url("/images/mail.svg");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+```
+
 </div>
 
 !!! tip "Совет"
@@ -191,6 +224,14 @@ icon: lucide/at-sign
       @include square(100px, $radius: 4px)
     ```
 
+```css title="CSS"
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+}
+```
+
 </div>
 
 !!! note "Примечание"
@@ -231,6 +272,26 @@ icon: lucide/at-sign
 
     @include order(150px, "input.name", "input.address", "input.zip")
     ```
+
+```css title="CSS"
+input.name {
+  position: absolute;
+  height: 150px;
+  margin-top: 0px;
+}
+
+input.address {
+  position: absolute;
+  height: 150px;
+  margin-top: 150px;
+}
+
+input.zip {
+  position: absolute;
+  height: 150px;
+  margin-top: 300px;
+}
+```
 
 </div>
 
@@ -384,6 +445,15 @@ pre span.stx-variable {
         border-width: 2px
     ```
 
+```css title="CSS"
+.button {
+  border: 1px solid black;
+}
+.button:not([disabled]):hover {
+  border-width: 2px;
+}
+```
+
 </div>
 
 !!! info "Информация"
@@ -442,27 +512,60 @@ pre span.stx-variable {
           font-family: Calluna
     ```
 
+```css title="CSS"
+@media screen {
+  h1 {
+    font-size: 40px;
+  }
+}
+@media print {
+  h1 {
+    font-size: 40px;
+    font-family: Calluna;
+  }
+}
+```
+
 </div>
 
 ## Синтаксис с отступами для миксинов {#indented-mixin-syntax}
 
 [Синтаксис с отступами](../syntax#the-indented-syntax) предлагает альтернативный способ работы с миксинами помимо стандартных `@mixin` и `@include`. Миксины определяются символом `=`, а вызываются с помощью `+`. Этот вариант короче, но менее интуитивен для чтения, поэтому его не рекомендуют использовать.
 
-```sass
-=reset-list
-  margin: 0
-  padding: 0
-  list-style: none
+<div class="grid" markdown>
 
-=horizontal-list
-  +reset-list
+=== "SASS"
 
-  li
-    display: inline-block
-    margin:
-      left: -2px
-      right: 2em
+    ```sass
+    =reset-list
+      margin: 0
+      padding: 0
+      list-style: none
 
-nav ul
-  +horizontal-list
+    =horizontal-list
+      +reset-list
+
+      li
+        display: inline-block
+        margin:
+          left: -2px
+          right: 2em
+
+    nav ul
+      +horizontal-list
+    ```
+
+```css title="CSS"
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-left: -2px;
+  margin-right: 2em;
+}
 ```
+
+</div>
