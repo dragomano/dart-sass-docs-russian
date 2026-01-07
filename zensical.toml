@@ -69,6 +69,12 @@ nav = [
         "at-rules/forward.md",
         "at-rules/import.md",
         "at-rules/mixin.md",
+        "at-rules/function.md",
+        "at-rules/extend.md",
+        "at-rules/error.md",
+        "at-rules/warn.md",
+        "at-rules/debug.md",
+        "at-rules/at-root.md",
     ]},
 ]
 
