@@ -75,6 +75,17 @@ nav = [
         "at-rules/warn.md",
         "at-rules/debug.md",
         "at-rules/at-root.md",
+        {"Управление потоком" = [
+            "at-rules/control/index.md",
+            "at-rules/control/if.md",
+            "at-rules/control/each.md",
+            "at-rules/control/for.md",
+            "at-rules/control/while.md",
+        ]},
+        {"Из CSS" = "at-rules/css.md"},
+    ]},
+    {"Встроенные модули" = [
+        "modules/string.md",
     ]},
 ]
 
