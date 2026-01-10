@@ -7,7 +7,7 @@ icon: lucide/message-square-quote
 
 ```scss
 string.quote($string)
-quote($string) //=> string
+quote($string) //=> строка
 ```
 
 Возвращает `$string` как строку в кавычках.
@@ -26,15 +26,15 @@ quote($string) //=> string
     ```sass
     @use "sass:string"
 
-    @debug string.quote(Helvetica)  // "Helvetica"
-    @debug string.quote("Helvetica")  // "Helvetica"
+    @debug string.quote(Helvetica) // "Helvetica"
+    @debug string.quote("Helvetica") // "Helvetica"
     ```
 
 ## index
 
 ```scss
 string.index($string, $substring)
-str-index($string, $substring) //=> number
+str-index($string, $substring) //=> число
 ```
 
 Возвращает первый [индекс](../values/strings#string-indexes) подстроки `$substring` в строке `$string` или `null`, если `$string` не содержит `$substring`.
@@ -53,15 +53,15 @@ str-index($string, $substring) //=> number
     ```sass
     @use "sass:string"
 
-    @debug string.index("Helvetica Neue", "Helvetica")  // 1
-    @debug string.index("Helvetica Neue", "Neue")  // 11
+    @debug string.index("Helvetica Neue", "Helvetica") // 1
+    @debug string.index("Helvetica Neue", "Neue") // 11
     ```
 
 ## insert
 
 ```scss
 string.insert($string, $insert, $index)
-str-insert($string, $insert, $index) //=> string
+str-insert($string, $insert, $index) //=> строка
 ```
 
 Возвращает копию строки `$string` с вставленной подстрокой `$insert` в позиции [`$index`](../values/strings#string-indexes).
@@ -80,8 +80,8 @@ str-insert($string, $insert, $index) //=> string
     ```sass
     @use "sass:string"
 
-    @debug string.insert("Roboto Bold", " Mono", 7)  // "Roboto Mono Bold"
-    @debug string.insert("Roboto Bold", " Mono", -6)  // "Roboto Mono Bold"
+    @debug string.insert("Roboto Bold", " Mono", 7) // "Roboto Mono Bold"
+    @debug string.insert("Roboto Bold", " Mono", -6) // "Roboto Mono Bold"
     ```
 
 Если `$index` больше длины строки `$string`, `$insert` добавляется в конец. Если `$index` меньше отрицательной длины строки, `$insert` добавляется в начало.
@@ -100,15 +100,15 @@ str-insert($string, $insert, $index) //=> string
     ```sass
     @use "sass:string"
 
-    @debug string.insert("Roboto", " Bold", 100)  // "Roboto Bold"
-    @debug string.insert("Bold", "Roboto ", -100)  // "Roboto Bold"
+    @debug string.insert("Roboto", " Bold", 100) // "Roboto Bold"
+    @debug string.insert("Bold", "Roboto ", -100) // "Roboto Bold"
     ```
 
 ## length
 
 ```scss
 string.length($string)
-str-length($string) //=> number
+str-length($string) //=> число
 ```
 
 Возвращает количество символов в строке `$string`.
@@ -128,16 +128,16 @@ str-length($string) //=> number
     ```sass
     @use "sass:string"
 
-    @debug string.length("Helvetica Neue")  // 14
-    @debug string.length(bold)  // 4
-    @debug string.length("")  // 0
+    @debug string.length("Helvetica Neue") // 14
+    @debug string.length(bold) // 4
+    @debug string.length("") // 0
     ```
 
 ## slice
 
 ```scss
 string.slice($string, $start-at, $end-at: -1)
-str-slice($string, $start-at, $end-at: -1) //=> string
+str-slice($string, $start-at, $end-at: -1) //=> строка
 ```
 
 Возвращает фрагмент строки `$string`, начинающийся с [индекса](../values/strings#string-indexes) `$start-at` и заканчивающийся индексом `$end-at` (оба включительно).
@@ -157,15 +157,15 @@ str-slice($string, $start-at, $end-at: -1) //=> string
     ```sass
     @use "sass:string"
 
-    @debug string.slice("Helvetica Neue", 11)  // "Neue"
-    @debug string.slice("Helvetica Neue", 1, 3)  // "Hel"
-    @debug string.slice("Helvetica Neue", 1, -6)  // "Helvetica"
+    @debug string.slice("Helvetica Neue", 11) // "Neue"
+    @debug string.slice("Helvetica Neue", 1, 3) // "Hel"
+    @debug string.slice("Helvetica Neue", 1, -6) // "Helvetica"
     ```
 
 ## split
 
 ```scss
-string.split($string, $separator, $limit: null) //=> list
+string.split($string, $separator, $limit: null) //=> список
 ```
 
 Возвращает заключённый в скобки список подстрок `$string`, разделённых запятыми, которые были разделены с помощью `$separator`. Сами `$separator` не включаются в эти подстроки.
@@ -186,15 +186,15 @@ string.split($string, $separator, $limit: null) //=> list
     ```sass
     @use "sass:string"
 
-    @debug string.split("Segoe UI Emoji", " ")  // ["Segoe", "UI", "Emoji"]
-    @debug string.split("Segoe UI Emoji", " ", $limit: 1)  // ["Segoe", "UI Emoji"]
+    @debug string.split("Segoe UI Emoji", " ") // ["Segoe", "UI", "Emoji"]
+    @debug string.split("Segoe UI Emoji", " ", $limit: 1) // ["Segoe", "UI Emoji"]
     ```
 
 ## to-upper-case
 
 ```scss
 string.to-upper-case($string)
-to-upper-case($string) //=> string
+to-upper-case($string) //=> строка
 ```
 
 Возвращает копию строки `$string` с буквами [ASCII](https://ru.wikipedia.org/wiki/ASCII), преобразованными в верхний регистр.
@@ -213,15 +213,15 @@ to-upper-case($string) //=> string
     ```sass
     @use "sass:string"
 
-    @debug string.to-upper-case("Bold")  // "BOLD"
-    @debug string.to-upper-case(sans-serif)  // SANS-SERIF
+    @debug string.to-upper-case("Bold") // "BOLD"
+    @debug string.to-upper-case(sans-serif) // SANS-SERIF
     ```
 
 ## to-lower-case
 
 ```scss
 string.to-lower-case($string)
-to-lower-case($string) //=> string
+to-lower-case($string) //=> строка
 ```
 
 Возвращает копию строки `$string` с буквами [ASCII](https://ru.wikipedia.org/wiki/ASCII), преобразованными в нижний регистр.
@@ -240,15 +240,15 @@ to-lower-case($string) //=> string
     ```sass
     @use "sass:string"
 
-    @debug string.to-lower-case("Bold")  // "bold"
-    @debug string.to-lower-case(SANS-SERIF)  // sans-serif
+    @debug string.to-lower-case("Bold") // "bold"
+    @debug string.to-lower-case(SANS-SERIF) // sans-serif
     ```
 
 ## unique-id
 
 ```scss
 string.unique-id()
-unique-id() //=> string
+unique-id() //=> строка
 ```
 
 Возвращает случайно сгенерированную строку без кавычек, которая гарантированно является валидным CSS-идентификатором и уникальна в рамках текущей компиляции Sass.
@@ -275,7 +275,7 @@ unique-id() //=> string
 
 ```scss
 string.unquote($string)
-unquote($string) //=> string
+unquote($string) //=> строка
 ```
 
 Возвращает `$string` как строку без кавычек. Это может приводить к строкам, которые не являются валидным CSS, поэтому использовать следует с осторожностью.
@@ -294,6 +294,6 @@ unquote($string) //=> string
     ```sass
     @use "sass:string"
 
-    @debug string.unquote("Helvetica")  // Helvetica
-    @debug string.unquote(".widget:hover")  // .widget:hover
+    @debug string.unquote("Helvetica") // Helvetica
+    @debug string.unquote(".widget:hover") // .widget:hover
     ```
