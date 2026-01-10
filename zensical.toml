@@ -34,7 +34,7 @@ site_url = "https://dragomano.github.io/dart-sass-docs-russian/"
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 copyright = """
-&copy; 2025 Bugo, лицензия <a href="https://dragomano.github.io/dart-sass-docs-russian/CONTENT-LICENSE.md">CC BY-NC-SA 4.0</a>
+&copy; 2025-2026 Bugo, лицензия <a href="https://dragomano.github.io/dart-sass-docs-russian/CONTENT-LICENSE.md">CC BY-NC-SA 4.0</a>
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -84,7 +84,16 @@ nav = [
         ]},
         {"Из CSS" = "at-rules/css.md"},
     ]},
+    {"Значения" = [
+        "values/index.md",
+        "values/numbers.md",
+        "values/strings.md",
+        "values/colors.md",
+        "values/lists.md",
+    ]},
     {"Встроенные модули" = [
+        "modules/index.md",
+        "modules/color.md",
         "modules/string.md",
     ]},
 ]
