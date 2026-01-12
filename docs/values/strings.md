@@ -185,7 +185,7 @@ icon: lucide/case-sensitive
 === "SCSS"
 
     ```scss
-     @debug url(https://example.org); // url(https://example.org)
+    @debug url(https://example.org); // url(https://example.org)
     @debug U+4??; // U+4??
     @debug #my-background; // #my-background
     @debug %; // %
