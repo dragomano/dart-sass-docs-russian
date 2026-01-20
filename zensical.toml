@@ -97,6 +97,14 @@ nav = [
         "values/functions.md",
         "values/mixins.md",
     ]},
+    {"Операторы" = [
+        "operators/index.md",
+        "operators/equality.md",
+        "operators/relational.md",
+        "operators/numeric.md",
+        "operators/string.md",
+        "operators/boolean.md",
+    ]},
     {"Встроенные модули" = [
         "modules/index.md",
         "modules/color.md",
@@ -107,6 +115,12 @@ nav = [
         "modules/selector.md",
         "modules/string.md",
     ]},
+    {"Командная строка" = [
+        "cli/index.md",
+        "cli/dart-sass.md",
+        "cli/migrator.md",
+    ]},
+    {"JavaScript API" = "https://sass-lang.com/documentation/js-api/"}
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize
