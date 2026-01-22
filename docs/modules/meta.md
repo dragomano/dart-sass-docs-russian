@@ -101,9 +101,9 @@ meta.load-css($url, $with: null)
 
 * URL загружаемого модуля может быть переменной и включать [интерполяцию](../interpolation).
 
-{% headsUp %}
-Параметр `$url` должен быть строкой с URL, как вы передали бы в правило `@use`. Это не должен быть CSS `url()`!
-{% endheadsUp %}
+!!! tip "Совет"
+
+    Параметр `$url` должен быть строкой с URL, как вы передали бы в правило `@use`. Это не должен быть CSS `url()`!
 
 <div class="grid" markdown>
 
@@ -357,7 +357,7 @@ feature-exists($feature) //=> булево значение
 
 * `global-variable-shadowing` — означает, что локальная переменная будет [затенять](../variables#shadowing) глобальную переменную, если у неё нет флага `!global`.
 * `extend-selector-pseudoclass` — означает, что правило [`@extend`](../at-rules/extend) будет влиять на селекторы, вложенные в псевдоклассы вроде `:not()`.
-* `units-level3` — означает, что [арифметика единиц](../values/numbers#units) поддерживает единицы, определённые в [CSS Values and Units Level 3](http://www.w3.org/TR/css3-values).
+* `units-level-3` — означает, что [арифметика единиц](../values/numbers#units) поддерживает единицы, определённые в [CSS Values and Units Level 3](http://www.w3.org/TR/css3-values).
 * `at-error` — означает, что правило [`@error`](../at-rules/error) поддерживается.
 * `custom-property` — означает, что значения [объявлений пользовательских свойств](../style-rules/declarations#custom-properties) не поддерживают никакие [выражения](../syntax/structure#expressions), кроме [интерполяции](../interpolation).
 
