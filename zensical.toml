@@ -115,6 +115,14 @@ nav = [
         "modules/selector.md",
         "modules/string.md",
     ]},
+    {"Критические изменения" = [
+        "breaking-changes/index.md",
+        "breaking-changes/if-function.md",
+        "breaking-changes/with-private.md",
+        "breaking-changes/misplaced-rest.md",
+        "breaking-changes/type-function.md",
+        "breaking-changes/import.md",
+    ]},
     {"Командная строка" = [
         "cli/index.md",
         "cli/dart-sass.md",
