@@ -122,6 +122,24 @@ nav = [
         "breaking-changes/misplaced-rest.md",
         "breaking-changes/type-function.md",
         "breaking-changes/import.md",
+        "breaking-changes/strict-unary.md",
+        "breaking-changes/bogus-combinators.md",
+        "breaking-changes/media-logic.md",
+        "breaking-changes/slash-div.md",
+        "breaking-changes/function-units.md",
+        "breaking-changes/moz-document.md",
+        "breaking-changes/extend-compound.md",
+        "breaking-changes/css-vars.md",
+        "breaking-changes/duplicate-var-flags.md",
+        "breaking-changes/default-export.md",
+        "breaking-changes/null-alpha.md",
+        "breaking-changes/abs-percent.md",
+        "breaking-changes/css-function-mixin.md",
+        "breaking-changes/mixed-decls.md",
+        "breaking-changes/feature-exists.md",
+        "breaking-changes/color-functions.md",
+        "breaking-changes/color-4-api.md",
+        "breaking-changes/legacy-js-api.md",
     ]},
     {"Командная строка" = [
         "cli/index.md",
@@ -381,6 +399,9 @@ repo = "lucide/smile"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
+[project.extra]
+generator = false
+
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://dragomano.github.io/dart-sass-docs-russian"
