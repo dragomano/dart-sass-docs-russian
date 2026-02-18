@@ -34,7 +34,7 @@ site_url = "https://dragomano.github.io/dart-sass-docs-russian/"
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 copyright = """
-&copy; 2025-2026 Bugo, лицензия <a href="https://dragomano.github.io/dart-sass-docs-russian/CONTENT-LICENSE.md">CC BY-NC-SA 4.0</a>
+&copy; 2025-2026 Bugo, лицензия <a href="https://github.com/dragomano/dart-sass-docs-russian/blob/main/CONTENT-LICENSE.md">CC BY-NC-SA 4.0</a>
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -165,7 +165,7 @@ extra_css = ["styles/extra.css"]
 # The path provided should be relative to the "docs_dir".
 #
 # Read more: https://zensical.org/docs/customization/#additional-javascript
-#extra_javascript = ["javascripts/extra.js"]
+extra_javascript = ["javascripts/extra.js"]
 
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
@@ -404,4 +404,4 @@ generator = false
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://dragomano.github.io/dart-sass-docs-russian"
+link = "https://github.com/dragomano/dart-sass-docs-russian"
