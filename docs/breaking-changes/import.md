@@ -107,12 +107,12 @@ button {
       color: theme.$text-color;
       background-color: theme.$background-color;
     }
-    ---
-    // _theme.scss
+    ```
+    ```scss title="_theme.scss"
     $text-color: black !default;
     $background-color: white !default;
-    ---
-    // dark.scss
+    ```
+    ```scss title="dark.scss"
     @use "theme" with (
       $text-color: white,
       $background-color: black,
