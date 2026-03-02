@@ -86,6 +86,7 @@ code {
 ul, ol {
   text-align: left;
 }
+
 ul ul, ol ol {
   padding-bottom: 0;
   padding-left: 0;
@@ -187,6 +188,7 @@ code {
 ul, ol {
   text-align: left;
 }
+
 ul ul, ol ol {
   padding-bottom: 0;
   padding-left: 0;
