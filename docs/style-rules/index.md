@@ -145,7 +145,7 @@ nav a {
 
 ### Комбинаторы селекторов {#selector-combinators}
 
-Вы также можете вкладывать селекторы, которые используют [комбинаторы](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors#Combinators#Combinators). Вы можете поместить комбинатор в конец внешнего селектора, в начало внутреннего селектора или даже отдельно между ними.
+Вы также можете вкладывать селекторы, использующие [комбинаторы](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors#Combinators#Combinators). Вы можете поместить комбинатор в конец внешнего селектора, в начало внутреннего селектора или даже отдельно между ними.
 
 <div class="grid" markdown>
 
