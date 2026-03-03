@@ -59,7 +59,7 @@ icon: lucide/chart-spline
 
 ## В SassScript {#in-sass-script}
 
-Интерполяция может использоваться в SassScript для внедрения SassScript в [строки без кавычек](../values/strings#unquoted). Это особенно полезно при динамической генерации имён (например, для анимаций) или при использовании [значений, разделенных косой чертой](../operators/numeric#slash-separated-values). Обратите внимание, что интерполяция в SassScript всегда возвращает строку без кавычек.
+Интерполяцию можно использовать в SassScript для вставки выражений SassScript в [строки без кавычек](../values/strings#unquoted). Это особенно полезно при динамическом создании имён (например, для анимаций) или при использовании значений, [разделённых косой чертой](../operators/numeric#slash-separated-values). Обратите внимание, что интерполяция в SassScript всегда возвращает строку без кавычек.
 
 <div class="grid" markdown>
 
@@ -95,11 +95,9 @@ icon: lucide/chart-spline
       @keyframes #{$name}
         @content
 
-
       animation-name: $name
       animation-duration: $duration
       animation-iteration-count: infinite
-
 
     .pulse
       @include inline-animation(2s)
@@ -110,18 +108,18 @@ icon: lucide/chart-spline
     ```
 
 ```css title="CSS"
-.pulse {
-  animation-name: inline-uifpe6h;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-@keyframes inline-uifpe6h {
+@keyframes inline-urxer20 {
   from {
     background-color: yellow;
   }
   to {
     background-color: red;
   }
+}
+.pulse {
+  animation-name: inline-urxer20;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 ```
 
