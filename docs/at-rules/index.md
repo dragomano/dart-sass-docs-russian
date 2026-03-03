@@ -25,13 +25,6 @@ icon: lucide/at-sign
 
 - [`@debug`](../at-rules/debug) выводит сообщение для целей отладки.
 
-- Правила управления потоком, такие как [`@if`][], [`@each`][], [`@for`][] и [`@while`][], контролируют, будет ли выведен стиль и сколько раз.
+- Правила управления потоком, такие как [`@if`](../at-rules/control/if), [`@each`](../at-rules/control/each), [`@for`](../at-rules/control/for) и [`@while`](../at-rules/control/while), контролируют, будет ли выведен стиль и сколько раз.
 
-У Sass также есть особое поведение для [обычных CSS at-правил](../at-rules/css): они могут содержать [интерполяцию](../interpolation) и могут быть вложены в правила стилей. Некоторые из них, такие как [`@media`][] и [`@supports`][], также позволяют использовать SassScript непосредственно в самом правиле без интерполяции.
-
-[`@if`]: ../at-rules/control/if
-[`@each`]: ../at-rules/control/each
-[`@for`]: ../at-rules/control/for
-[`@while`]: ../at-rules/control/while
-[`@media`]: ../at-rules/css#media
-[`@supports`]: ../at-rules/css#supports
+У Sass также есть особое поведение для [обычных CSS at-правил](../at-rules/css): они могут содержать [интерполяцию](../interpolation) и могут быть вложены в правила стилей. Некоторые из них, такие как [`@media`](../at-rules/css#media) и [`@supports`](../at-rules/css#supports), также позволяют использовать SassScript непосредственно в самом правиле без интерполяции.
