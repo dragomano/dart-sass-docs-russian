@@ -119,17 +119,17 @@ Sass автоматически преобразует совместимые е
     $transition-speed: math.div(1s, 50px);
 
     @mixin move($left-start, $left-stop) {
-        position: absolute;
-        left: $left-start;
-        transition: left ($left-stop - $left-start) * $transition-speed;
+      position: absolute;
+      left: $left-start;
+      transition: left ($left-stop - $left-start) * $transition-speed;
 
-        &:hover {
+      &:hover {
         left: $left-stop;
-        }
+      }
     }
 
     .slider {
-        @include move(10px, 120px);
+      @include move(10px, 120px);
     }
     ```
 
@@ -141,15 +141,15 @@ Sass автоматически преобразует совместимые е
     $transition-speed: math.div(1s, 50px)
 
     @mixin move($left-start, $left-stop)
-        position: absolute
-        left: $left-start
-        transition: left ($left-stop - $left-start) * $transition-speed
+      position: absolute
+      left: $left-start
+      transition: left ($left-stop - $left-start) * $transition-speed
 
-        &:hover
+      &:hover
         left: $left-stop
 
     .slider
-        @include move(10px, 120px)
+      @include move(10px, 120px)
     ```
 
 ```css title="CSS"
@@ -191,18 +191,18 @@ Sass автоматически преобразует совместимые е
 
     ```scss
     @debug 0.012345678912345; // 0.0123456789
-    @debug 0.01234567891 == 0.01234567899; // true
-    @debug 1.00000000009; // 1
-    @debug 0.99999999991; // 1
+    @debug 0.01234567891 == 0.012345678912; // true
+    @debug 1.00000000009; // 1.00000000009
+    @debug 0.99999999991; // 0.99999999991
     ```
 
 === "SASS"
 
     ```sass
-    @debug 0.012345678912345  // 0.0123456789
-    @debug 0.01234567891 == 0.01234567899  // true
-    @debug 1.00000000009  // 1
-    @debug 0.99999999991  // 1
+    @debug 0.012345678912345 // 0.0123456789
+    @debug 0.01234567891 == 0.012345678912 // true
+    @debug 1.00000000009; // 1.00000000009
+    @debug 0.99999999991; // 0.99999999991
     ```
 
 !!! note "Примечание"
