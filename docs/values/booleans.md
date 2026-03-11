@@ -3,7 +3,7 @@ title: "true и false"
 icon: lucide/binary
 ---
 
-> Булевы значения — это логические значения `true` и `false`. Помимо их буквальных форм, булевы значения возвращаются операторами [равенства](../operators/equality) и [сравнения](../operators/relational), а также многими встроенными функциями, такими как [`math.comparable()`](../modules/math#comparable) и [`map.has-key()`](../modules/map#has-key).
+> Булевы значения — это логические значения `true` и `false`. Помимо их буквальных форм, булевы значения возвращаются операторами [равенства](../operators/equality) и [сравнения](../operators/relational), а также многими встроенными функциями, такими как [`math.compatible()`](../modules/math#compatible) и [`map.has-key()`](../modules/map#has-key).
 
 === "SCSS"
 
@@ -13,7 +13,7 @@ icon: lucide/binary
     @debug 1px == 2px; // false
     @debug 1px == 1px; // true
     @debug 10px < 3px; // false
-    @debug math.comparable(100px, 3in); // true
+    @debug math.compatible(100px, 3in); // true
     ```
 
 === "SASS"
@@ -24,7 +24,7 @@ icon: lucide/binary
     @debug 1px == 2px // false
     @debug 1px == 1px // true
     @debug 10px < 3px // false
-    @debug math.comparable(100px, 3in) // true
+    @debug math.compatible(100px, 3in) // true
     ```
 
 Вы можете работать с булевыми значениями, используя [булевы операторы](../operators/boolean). Оператор `and` возвращает `true`, если *обе* стороны равны `true`, а оператор `or` возвращает `true`, если *любая* из сторон равна `true`. Оператор `not` возвращает противоположное значение одного булева значения.
