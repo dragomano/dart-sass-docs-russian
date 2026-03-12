@@ -25,7 +25,7 @@ icon: lucide/equal
     @debug "Helvetica" == Helvetica; // true
     @debug "Helvetica" != "Arial"; // true
 
-    @debug hsl(34, 35%, 92.1%) == #f2ece4; // true
+    @debug hsl(34, 35%, 92.1%) == #f2ece4; // false
     @debug rgba(179, 115, 153, 0.5) != rgba(179, 115, 153, 0.8); // true
 
     @debug (5px 7px 10px) == (5px 7px 10px); // true
