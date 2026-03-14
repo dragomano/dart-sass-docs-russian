@@ -11,7 +11,7 @@ icon: lucide/a-arrow-up
 === "SCSS"
 
     ```scss
-    @debug "Helvetica" + " Neue"; // "Helvetica Neue"
+    @debug "Helvetica" + " Neue"; // Helvetica Neue
     @debug sans- + serif; // sans-serif
     @debug sans - serif; // sans-serif
     ```
@@ -19,7 +19,7 @@ icon: lucide/a-arrow-up
 === "SASS"
 
     ```sass
-    @debug "Helvetica" + " Neue" // "Helvetica Neue"
+    @debug "Helvetica" + " Neue" // Helvetica Neue
     @debug sans- + serif // sans-serif
     @debug sans - serif // sans-serif
     ```
@@ -32,15 +32,15 @@ icon: lucide/a-arrow-up
 === "SCSS"
 
     ```scss
-    @debug "Прошло времени: " + 10s; // "Прошло времени: 10s";
-    @debug true + " является логическим значением"; // "true является логическим значением";
+    @debug "Прошло времени: " + 10s; // Прошло времени: 10s
+    @debug true + " является логическим значением"; // true является логическим значением
     ```
 
 === "SASS"
 
     ```sass
-    @debug "Прошло времени: " + 10s // "Прошло времени: 10s";
-    @debug true + " является логическим значением" // "true является логическим значением";
+    @debug "Прошло времени: " + 10s // Прошло времени: 10s
+    @debug true + " является логическим значением" // true является логическим значением
     ```
 
 !!! note "Примечание"
