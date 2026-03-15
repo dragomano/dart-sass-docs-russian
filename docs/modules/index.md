@@ -98,14 +98,14 @@ color($space $channel1 $channel2 $channel3 / $alpha) //=> color
 
     ```scss
     @debug color(srgb 0.1 0.6 1); // color(srgb 0.1 0.6 1)
-    @debug color(xyz 30% 0% 90% / 50%); // color(xyz 0.3 0 0.9 / 50%)
+    @debug color(xyz 30% 0% 90% / 50%); // color(xyz 0.3 0 0.9 / 0.5)
     ```
 
 === "SASS"
 
     ```sass
     @debug color(srgb 0.1 0.6 1) // color(srgb 0.1 0.6 1)
-    @debug color(xyz 30% 0% 90% / 50%) // color(xyz 0.3 0 0.9 / 50%)
+    @debug color(xyz 30% 0% 90% / 50%) // color(xyz 0.3 0 0.9 / 0.5)
     ```
 
 ### hsl
@@ -127,22 +127,22 @@ hsla($hue, $saturation, $lightness, $alpha: 1) //=> color
 
 !!! note "Примечание"
 
-    Специальные [правила разбора Sass](../operators/numeric#slash-separated-values) для значений, разделённых слешами, затрудняют передачу переменных для `$lightness` или `$alpha` при использовании сигнатуры `hsl($hue $saturation $lightness / $alpha)$. Рекомендуется использовать `hsl($hue, $saturation, $lightness, $alpha)` вместо этого.
+    Специальные [правила разбора Sass](../operators/numeric#slash-separated-values) для значений, разделённых слешами, затрудняют передачу переменных для `$lightness` или `$alpha` при использовании сигнатуры `hsl($hue $saturation $lightness / $alpha)`. Рекомендуется использовать `hsl($hue, $saturation, $lightness, $alpha)` вместо этого.
 
 === "SCSS"
 
     ```scss
-    @debug hsl(210deg 100% 20%); // #036
-    @debug hsl(210deg 100% 20% / 50%); // rgba(0, 51, 102, 0.5)
-    @debug hsla(34, 35%, 92%, 0.2); // rgba(241.74, 235.552, 227.46, 0.2)
+    @debug hsl(210deg 100% 20%); // hsl(210, 100%, 20%)
+    @debug hsl(210deg 100% 20% / 50%); // hsla(210, 100%, 20%, 0.5)
+    @debug hsla(34, 35%, 92%, 0.2); // hsla(34, 35%, 92%, 0.2)
     ```
 
 === "SASS"
 
     ```sass
-    @debug hsl(210deg 100% 20%) // #036
-    @debug hsl(210deg 100% 20% / 50%) // rgba(0, 51, 102, 0.5)
-    @debug hsla(34, 35%, 92%, 0.2) // rgba(241.74, 235.552, 227.46, 0.2)
+    @debug hsl(210deg 100% 20%) // hsl(210, 100%, 20%)
+    @debug hsl(210deg 100% 20% / 50%) // hsla(210, 100%, 20%, 0.5)
+    @debug hsla(34, 35%, 92%, 0.2) // hsla(34, 35%, 92%, 0.2)
     ```
 
 ### hwb
@@ -168,15 +168,15 @@ color.hwb($hue, $whiteness, $blackness, $alpha: 1) //=> color
 === "SCSS"
 
     ```scss
-    @debug hwb(210deg 0% 60%); // #036
-    @debug hwb(210 0% 60% / 0.5); // rgba(0, 51, 102, 0.5)
+    @debug hwb(210deg 0% 60%); // hwb(210 0% 60%)
+    @debug hwb(210 0% 60% / 0.5); // hwb(210 0% 60% / 0.5)
     ```
 
 === "SASS"
 
     ```sass
-    @debug hwb(210deg 0% 60%) // #036
-    @debug hwb(210 0% 60% / 0.5) // rgba(0, 51, 102, 0.5)
+    @debug hwb(210deg 0% 60%) // hwb(210 0% 60%)
+    @debug hwb(210 0% 60% / 0.5) // hwb(210 0% 60% / 0.5)
     ```
 
 ### lab
@@ -313,8 +313,8 @@ rgba($color, $alpha) //=> color
 === "SCSS"
 
     ```scss
-    @debug rgb(0 51 102); // #036
-    @debug rgb(95%, 92.5%, 89.5%); // #f2ece4
+    @debug rgb(0 51 102); // rgb(0, 51, 102)
+    @debug rgb(95%, 92.5%, 89.5%); // rgb(242.25, 235.875, 228.225)
     @debug rgb(0 51 102 / 50%); // rgba(0, 51, 102, 0.5)
     @debug rgba(95%, 92.5%, 89.5%, 0.2); // rgba(242, 236, 228, 0.2)
     ```
@@ -322,8 +322,8 @@ rgba($color, $alpha) //=> color
 === "SASS"
 
     ```sass
-    @debug rgb(0 51 102) // #036
-    @debug rgb(95%, 92.5%, 89.5%) // #f2ece4
+    @debug rgb(0 51 102) // rgb(0, 51, 102)
+    @debug rgb(95%, 92.5%, 89.5%) // rgb(242.25, 235.875, 228.225)
     @debug rgb(0 51 102 / 50%) // rgba(0, 51, 102, 0.5)
     @debug rgba(95%, 92.5%, 89.5%, 0.2) // rgba(242, 236, 228, 0.2)
     ```
