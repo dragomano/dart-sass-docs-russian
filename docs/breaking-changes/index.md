@@ -11,6 +11,8 @@ icon: lucide/newspaper
 
 Эти критические изменения скоро будут выпущены или были недавно выпущены:
 
+* [Дополнительные имена встроенных CSS-функций](../breaking-changes/function-name/), начиная с Dart Sass 1.98.0
+
 * [Устаревшая функция `if()`](../breaking-changes/if-function/) начиная с Dart Sass 1.95.0
 
 * [Приватные переменные в `with`](../breaking-changes/with-private/) начиная с Dart Sass 1.92.0
