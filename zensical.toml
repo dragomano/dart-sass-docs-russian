@@ -117,6 +117,7 @@ nav = [
     ]},
     {"Критические изменения" = [
         "breaking-changes/index.md",
+        "breaking-changes/function-name.md",
         "breaking-changes/if-function.md",
         "breaking-changes/with-private.md",
         "breaking-changes/misplaced-rest.md",
