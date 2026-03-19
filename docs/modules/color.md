@@ -157,7 +157,7 @@ complement($color, $space: null) //=> цвет
 
 Возвращает [комплементарный цвет](https://en.wikipedia.org/wiki/Complementary_colors) для `$color` в пространстве `$space`.
 
-Поворачивает тон `$color` на `180deg` в пространстве `$space`. Это означает, что `$space` должно быть полярным цветовым пространством: `hsl`, `hwb`, `lch` или `oklch`. Всегда возвращает цвет в том же пространстве, что и `$color`.
+Поворачивает оттенок `$color` на `180deg` в пространстве `$space`. Это означает, что `$space` должно быть полярным цветовым пространством: `hsl`, `hwb`, `lch` или `oklch`. Всегда возвращает цвет в том же пространстве, что и `$color`.
 
 !!! tip "Совет"
 
@@ -402,7 +402,7 @@ mix($color1, $color2, $weight: 50%, $method: null) //=> цвет
     ```scss
     @use 'sass:color';
 
-    @debug color.mix(#036, #d2e1dd, $method: rgb); // #698aa2
+    @debug color.mix(#036, #d2e1dd, $method: rgb); // rgb(105, 138, 161.5)
     @debug color.mix(#036, #d2e1dd, $method: oklch); // rgb(87.864037264, 140.601918773, 154.2876826946)
     @debug color.mix(
       color(rec2020 1 0.7 0.1),
@@ -422,10 +422,9 @@ mix($color1, $color2, $weight: 50%, $method: null) //=> цвет
     ```sass
     @use 'sass:color';
 
-    @debug color.mix(#036, #d2e1dd, $method: rgb) // #698aa2
+    @debug color.mix(#036, #d2e1dd, $method: rgb) // rgb(105, 138, 161.5)
     @debug color.mix(#036, #d2e1dd, $method: oklch) // rgb(87.864037264, 140.601918773, 154.2876826946)
     @debug color.mix(color(rec2020 1 0.7 0.1), color(rec2020 0.8 none 0.3), $weight: 75%, $method: rec2020) // color(rec2020 0.95 0.7 0.15)
-
     @debug color.mix(oklch(80% 20% 0deg), oklch(50% 10% 120deg), $method: oklch longer hue) // oklch(65% 0.06 240deg)
     ```
 
@@ -603,9 +602,8 @@ color.to-space($color, $space) //=> цвет
     ```scss
     @use 'sass:color';
 
-    @debug color.to-space(#036, display-p3); // lch(20.7457453073% 35.0389733355 273.0881809283deg)
-    @debug color.to-space(oklab(44% 0.09 -0.13)); // rgb(103.1328911972, 50.9728091281, 150.8382311692)
-    @debug color.to-space(xyz(0.8 0.1 0.1)); // color(a98-rgb 1.2177586808 -0.7828263424 0.3516847577)
+    @debug color.to-space(#036, display-p3); // color(display-p3 0.06909232748693148 0.19643835900273832 0.3861624224061377)
+    @debug color.to-space(oklab(44% 0.09 -0.13), rgb); // rgb(103.1328911972, 50.9728091281, 150.8382311692)
     @debug color.to-space(grey, lch); // lch(53.5850134522% 0 none)
     @debug color.to-space(lch(none 10% 30deg), oklch); // oklch(none 0.3782382429 11.1889160032deg)
     ```
@@ -615,9 +613,8 @@ color.to-space($color, $space) //=> цвет
     ```sass
     @use 'sass:color'
 
-    @debug color.to-space(#036, display-p3) // lch(20.7457453073% 35.0389733355 273.0881809283deg)
-    @debug color.to-space(oklab(44% 0.09 -0.13)) // rgb(103.1328911972, 50.9728091281, 150.8382311692)
-    @debug color.to-space(xyz(0.8 0.1 0.1)) // color(a98-rgb 1.2177586808 -0.7828263424 0.3516847577)
+    @debug color.to-space(#036, display-p3) // color(display-p3 0.06909232748693148 0.19643835900273832 0.3861624224061377)
+    @debug color.to-space(oklab(44% 0.09 -0.13), rgb) // rgb(103.1328911972, 50.9728091281, 150.8382311692)
     @debug color.to-space(grey, lch) // lch(53.5850134522% 0 none)
     @debug color.to-space(lch(none 10% 30deg), oklch) // oklch(none 0.3782382429 11.1889160032deg)
     ```
@@ -650,7 +647,7 @@ adjust-hue($color, $degrees) //=> цвет
     @debug adjust-hue(#d2e1dd, -60deg); // #d6e1d2
 
     // Оттенок 210deg становится 255deg.
-    @debug adjust-hue(#036, 45); // #1a0066
+    @debug adjust-hue(#036, 45); // rgb(25.500000000000046, 0, 102)
     ```
 
 === "SASS"
@@ -663,7 +660,7 @@ adjust-hue($color, $degrees) //=> цвет
     @debug adjust-hue(#d2e1dd, -60deg) // #d6e1d2
 
     // Оттенок 210deg становится 255deg.
-    @debug adjust-hue(#036, 45) // #1a0066
+    @debug adjust-hue(#036, 45) // rgb(25.500000000000046, 0, 102)
     ```
 
 ### alpha
@@ -802,7 +799,7 @@ darken($color, $amount) //=> цвет
         @debug darken(#036, 30%); // black
 
         // scale() вместо этого делает его на 30% темнее, чем был изначально.
-        @debug color.scale(#036, $lightness: -30%); // #002447
+        @debug color.scale(#036, $lightness: -30%); // rgb(0, 35.69999999999997, 71.4)
         ```
 
     === "SASS"
@@ -815,17 +812,17 @@ darken($color, $amount) //=> цвет
         @debug darken(#036, 30%) // black
 
         // scale() вместо этого делает его на 30% темнее, чем был изначально.
-        @debug color.scale(#036, $lightness: -30%) // #002447
+        @debug color.scale(#036, $lightness: -30%) // rgb(0, 35.69999999999997, 71.4)
         ```
 
 === "SCSS"
 
     ```scss
     // Яркость 92% становится 72%.
-    @debug darken(#b37399, 20%); // #7c4465
+    @debug darken(#b37399, 20%); // rgb(124.44444444444441, 67.55555555555556, 101.33333333333333)
 
     // Яркость 85% становится 45%.
-    @debug darken(#f2ece4, 40%); // #b08b5a
+    @debug darken(#f2ece4, 40%); // rgb(175.69999999999987, 139.10000000000008, 90.30000000000014)
 
     // Яркость 20% становится 0%.
     @debug darken(#036, 30%); // black
@@ -835,10 +832,10 @@ darken($color, $amount) //=> цвет
 
     ```sass
     // Яркость 92% становится 72%.
-    @debug darken(#b37399, 20%) // #7c4465
+    @debug darken(#b37399, 20%) // rgb(124.44444444444441, 67.55555555555556, 101.33333333333333)
 
     // Яркость 85% становится 45%.
-    @debug darken(#f2ece4, 40%) // #b08b5a
+    @debug darken(#f2ece4, 40%) // rgb(175.69999999999987, 139.10000000000008, 90.30000000000014)
 
     // Яркость 20% становится 0%.
     @debug darken(#036, 30%) // black
@@ -869,10 +866,10 @@ desaturate($color, $amount) //=> цвет
 
         // #d2e1dd имеет насыщенность 20%, поэтому при вычитании 30%
         // desaturate() возвращает серый.
-        @debug desaturate(#d2e1dd, 30%); // #dadada
+        @debug desaturate(#d2e1dd, 30%); // rgb(217.50000000000003, 217.50000000000003, 217.50000000000003)
 
         // scale() вместо этого делает его на 30% менее насыщенным, чем был изначально.
-        @debug color.scale(#6b717f, $saturation: -30%); // #6e727c
+        @debug color.scale(#6b717f, $saturation: -30%); // rgb(109.99999999999999, 114.19999999999999, 124)
         ```
 
     === "SASS"
@@ -882,36 +879,36 @@ desaturate($color, $amount) //=> цвет
 
         // #d2e1dd имеет насыщенность 20%, поэтому при вычитании 30%
         // desaturate() возвращает серый.
-        @debug desaturate(#d2e1dd, 30%)  // #dadada
+        @debug desaturate(#d2e1dd, 30%)  // rgb(217.50000000000003, 217.50000000000003, 217.50000000000003)
 
         // scale() вместо этого делает его на 30% менее насыщенным, чем был изначально.
-        @debug color.scale(#6b717f, $saturation: -30%) // #6e727c
+        @debug color.scale(#6b717f, $saturation: -30%) // rgb(109.99999999999999, 114.19999999999999, 124)
         ```
 
 === "SCSS"
 
     ```scss
     // Насыщенность 100% становится 80%.
-    @debug desaturate(#036, 20%); // #0a335c
+    @debug desaturate(#036, 20%); // rgb(10.199999999999996, 50.999999999999964, 91.80000000000001)
 
     // Насыщенность 35% становится 15%.
-    @debug desaturate(#f2ece4, 20%); // #eeebe8
+    @debug desaturate(#f2ece4, 20%); // rgb(237.99999999999994, 235.42857142857142, 232.00000000000003)
 
     // Насыщенность 20% становится 0%.
-    @debug desaturate(#d2e1dd, 30%); // #dadada
+    @debug desaturate(#d2e1dd, 30%); // rgb(217.50000000000003, 217.50000000000003, 217.50000000000003)
     ```
 
 === "SASS"
 
     ```sass
     // Насыщенность 100% становится 80%.
-    @debug desaturate(#036, 20%)  // #0a335c
+    @debug desaturate(#036, 20%)  // rgb(10.199999999999996, 50.999999999999964, 91.80000000000001)
 
     // Насыщенность 35% становится 15%.
-    @debug desaturate(#f2ece4, 20%)  // #eeebe8
+    @debug desaturate(#f2ece4, 20%)  // rgb(237.99999999999994, 235.42857142857142, 232.00000000000003)
 
     // Насыщенность 20% становится 0%.
-    @debug desaturate(#d2e1dd, 30%)  // #dadada
+    @debug desaturate(#d2e1dd, 30%)  // rgb(217.50000000000003, 217.50000000000003, 217.50000000000003)
     ```
 
 ### green
@@ -1012,7 +1009,7 @@ lighten($color, $amount) //=> цвет
         @debug lighten(#e1d7d2, 30%); // white
 
         // scale() вместо этого делает его на 30% светлее, чем был изначально.
-        @debug color.scale(#e1d7d2, $lightness: 30%); // #eae3e0
+        @debug color.scale(#e1d7d2, $lightness: 30%); // rgb(233.99999999999997, 227, 223.5)
         ```
 
     === "SASS"
@@ -1025,14 +1022,14 @@ lighten($color, $amount) //=> цвет
         @debug lighten(#e1d7d2, 30%)  // white
 
         // scale() вместо этого делает его на 30% светлее, чем был изначально.
-        @debug color.scale(#e1d7d2, $lightness: 30%)  // #eae3e0
+        @debug color.scale(#e1d7d2, $lightness: 30%)  // rgb(233.99999999999997, 227, 223.5)
         ```
 
 === "SCSS"
 
     ```scss
     // Яркость 46% становится 66%.
-    @debug lighten(#6b717f, 20%); // #a1a5af
+    @debug lighten(#6b717f, 20%); // rgb(160.56410256410254, 165.02564102564097, 175.4358974358974)
 
     // Яркость 20% становится 80%.
     @debug lighten(#036, 60%); // #99ccff
@@ -1045,7 +1042,7 @@ lighten($color, $amount) //=> цвет
 
     ```sass
     // Яркость 46% становится 66%.
-    @debug lighten(#6b717f, 20%) // #a1a5af
+    @debug lighten(#6b717f, 20%) // rgb(160.56410256410254, 165.02564102564097, 175.4358974358974)
 
     // Яркость 20% становится 80%.
     @debug lighten(#036, 60%) // #99ccff
@@ -1210,10 +1207,10 @@ saturate($color, $amount) //=> цвет
 
         // #0e4982 имеет насыщенность 80%, поэтому при добавлении 30%
         // saturate() становится полностью насыщенным.
-        @debug saturate(#0e4982, 30%); // #004990
+        @debug saturate(#0e4982, 30%); // rgb(0, 73.24137931034481, 144)
 
         // scale() вместо этого делает его на 30% более насыщенным, чем был изначально.
-        @debug color.scale(#0e4982, $saturation: 30%); // #0a4986
+        @debug color.scale(#0e4982, $saturation: 30%); // rgb(9.800000000000004, 73.07241379310345, 134.2)
         ```
 
     === "SASS"
@@ -1223,36 +1220,36 @@ saturate($color, $amount) //=> цвет
 
         // #0e4982 имеет насыщенность 80%, поэтому при добавлении 30%
         // saturate() становится полностью насыщенным.
-        @debug saturate(#0e4982, 30%)  // #004990
+        @debug saturate(#0e4982, 30%)  // rgb(0, 73.24137931034481, 144)
 
         // scale() вместо этого делает его на 30% более насыщенным, чем был изначально.
-        @debug color.scale(#0e4982, $saturation: 30%)  // #0a4986
+        @debug color.scale(#0e4982, $saturation: 30%)  // rgb(9.800000000000004, 73.07241379310345, 134.2)
         ```
 
 === "SCSS"
 
     ```scss
     // Насыщенность 50% становится 70%.
-    @debug saturate(#c69, 20%); // #e05299
+    @debug saturate(#c69, 20%); // rgb(224.4, 81.60000000000005, 153.00000000000006)
 
     // Насыщенность 35% становится 85%.
     @debug desaturate(#f2ece4, 50%); // #ebebeb
 
     // Насыщенность 80% становится 100%.
-    @debug saturate(#0e4982, 30%); // #004990
+    @debug saturate(#0e4982, 30%); // rgb(0, 73.24137931034481, 144)
     ```
 
 === "SASS"
 
     ```sass
     // Насыщенность 50% становится 70%.
-    @debug saturate(#c69, 20%) // #e05299
+    @debug saturate(#c69, 20%) // rgb(224.4, 81.60000000000005, 153.00000000000006)
 
     // Насыщенность 35% становится 85%.
     @debug desaturate(#f2ece4, 50%) // #ebebeb
 
     // Насыщенность 80% становится 100%.
-    @debug saturate(#0e4982, 30%) // #004990
+    @debug saturate(#0e4982, 30%) // rgb(0, 73.24137931034481, 144)
     ```
 
 ### saturation
@@ -1276,7 +1273,7 @@ saturation($color) //=> число
     @use 'sass:color';
 
     @debug color.saturation(#e1d7d2); // 20%
-    @debug color.saturation(#f2ece4); // 30%
+    @debug color.saturation(#f2ece4); // 35%
     @debug color.saturation(#dadbdf); // 7.2463768116%
     ```
 
@@ -1286,7 +1283,7 @@ saturation($color) //=> число
     @use 'sass:color'
 
     @debug color.saturation(#e1d7d2) // 20%
-    @debug color.saturation(#f2ece4) // 30%
+    @debug color.saturation(#f2ece4) // 35%
     @debug color.saturation(#dadbdf) // 7.2463768116%
     ```
 
