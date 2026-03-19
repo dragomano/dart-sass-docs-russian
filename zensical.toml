@@ -166,7 +166,7 @@ extra_css = ["styles/extra.css"]
 # The path provided should be relative to the "docs_dir".
 #
 # Read more: https://zensical.org/docs/customization/#additional-javascript
-extra_javascript = ["javascripts/extra.js"]
+#extra_javascript = ["javascripts/extra.js"]
 
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
@@ -184,7 +184,11 @@ extra_javascript = ["javascripts/extra.js"]
 # Read more:
 # - https://zensical.org/docs/customization/#extending-the-theme
 #
-#custom_dir = "overrides"
+custom_dir = "overrides"
+
+[project.extra.analytics]
+provider = "clarity"
+property = "vj4lm5j8nb"
 
 # With the "favicon" option you can set your own image to use as the icon
 # browsers will use in the browser title bar or tab bar. The path provided
