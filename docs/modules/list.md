@@ -261,7 +261,7 @@ set-nth($list, $n, $value) //=> список
     @use 'sass:list';
 
     @debug list.set-nth(10px 20px 30px, 1, 2em); // 2em 20px 30px
-    @debug list.set-nth(10px 20px 30px, -1, 8em); // 10px, 20px, 8em
+    @debug list.set-nth(10px 20px 30px, -1, 8em); // 10px 20px 8em
     @debug list.set-nth((Helvetica, Arial, sans-serif), 3, Roboto); // Helvetica, Arial, Roboto
     ```
 
@@ -271,7 +271,7 @@ set-nth($list, $n, $value) //=> список
     @use 'sass:list'
 
     @debug list.set-nth(10px 20px 30px, 1, 2em); // 2em 20px 30px
-    @debug list.set-nth(10px 20px 30px, -1, 8em); // 10px, 20px, 8em
+    @debug list.set-nth(10px 20px 30px, -1, 8em); // 10px 20px 8em
     @debug list.set-nth((Helvetica, Arial, sans-serif), 3, Roboto); // Helvetica, Arial, Roboto
     ```
 
@@ -285,7 +285,7 @@ list.slash($elements...) //=> список
 
 !!! note "Примечание"
 
-    Эта функция — временное решение для создания списков с разделителем слеш. В будущем они будут писаться буквально со слешами, например `1px / 2px / solid`, но пока [слеши используются для деления](../breaking-changes/slash-div), Sass не может использовать их для новой синтаксиса, пока старый синтаксис не будет удалён.
+    Эта функция — временное решение для создания списков с разделителем слеш. В будущем они будут писаться буквально со слешами, например `1px / 2px / solid`, но пока [слеши используются для деления](../breaking-changes/slash-div), Sass не может использовать их для нового синтаксиса, пока старый синтаксис не будет удалён.
 
 === "SCSS"
 
