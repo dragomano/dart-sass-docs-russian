@@ -170,6 +170,150 @@ meta.accepts-content($mixin) //=> булево значение
 
 Возвращает `true`, если для миксина возможно принять блок `@content`, даже если он не всегда это делает.
 
+=== "SCSS"
+
+    ```scss
+    @use 'sass:meta';
+
+    // Миксин с контентом
+    @mixin card {
+      border-radius: 8px;
+      overflow: hidden;
+
+      @if meta.content-exists() {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        @content;
+      }
+    }
+
+    // Миксин без контента
+    @mixin simple-card {
+      border-radius: 8px;
+      background: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+    }
+
+    // Функция для создания карточки в зависимости от типа миксина
+    @function create-card($mixin-ref) {
+      @if meta.accepts-content($mixin-ref) {
+        @return "Этот миксин поддерживает кастомный контент";
+      } @else {
+        @return "Этот миксин использует стандартное оформление";
+      }
+    }
+
+    // Получаем ссылки на миксины
+    $card-ref: meta.get-mixin('card');
+    $simple-ref: meta.get-mixin('simple-card');
+
+    // Используем функцию в CSS
+    .card-info::before {
+      content: create-card($card-ref);
+    }
+
+    .simple-info::before {
+      content: create-card($simple-ref);
+    }
+
+    // Использование самих миксинов
+    .actual-card {
+      @include card {
+        padding: 20px;
+
+        h3 {
+          color: #333;
+        }
+      }
+    }
+
+    .actual-simple {
+      @include simple-card;
+    }
+    ```
+
+=== "SASS"
+
+    ```sass
+    @use 'sass:meta'
+
+    // Миксин с контентом
+    @mixin card
+      border-radius: 8px
+      overflow: hidden
+
+      @if meta.content-exists()
+        background: white
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1)
+        @content
+
+    // Миксин без контента
+    @mixin simple-card
+      border-radius: 8px
+      background: #f5f5f5
+      padding: 20px
+      text-align: center
+
+    // Функция для создания карточки в зависимости от типа миксина
+    @function create-card($mixin-ref)
+      @if meta.accepts-content($mixin-ref)
+        @return "Этот миксин поддерживает кастомный контент"
+      @else
+        @return "Этот миксин использует стандартное оформление"
+
+    // Получаем ссылки на миксины
+    $card-ref: meta.get-mixin('card')
+    $simple-ref: meta.get-mixin('simple-card')
+
+    // Используем функцию в CSS
+    .card-info::before
+      content: create-card($card-ref)
+
+    .simple-info::before
+      content: create-card($simple-ref)
+
+    // Использование самих миксинов
+    .actual-card
+      @include card
+        padding: 20px
+
+        h3
+          color: #333
+
+    .actual-simple
+      @include simple-card
+    ```
+
+```css title="CSS"
+@charset "UTF-8";
+.card-info::before {
+  content: "Этот миксин поддерживает кастомный контент";
+}
+
+.simple-info::before {
+  content: "Этот миксин использует стандартное оформление";
+}
+
+.actual-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.actual-card h3 {
+  color: #333;
+}
+
+.actual-simple {
+  border-radius: 8px;
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+```
+
 ### calc-args
 
 ```scss
@@ -318,14 +462,32 @@ content-exists() //=> булево значение
     ```scss
     @use 'sass:meta';
 
-    @mixin debug-content-exists {
-      @debug meta.content-exists();
-      @content;
+    // Сначала объявляем миксин
+    @mixin card {
+      border-radius: 8px;
+      padding: 16px;
+
+      // Проверяем, есть ли контент в текущем вызове
+      @if meta.content-exists() {
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        @content;
+      } @else {
+        background-color: #f0f0f0;
+        border: 2px dashed #999;
+      }
     }
 
-    @include debug-content-exists; // false
-    @include debug-content-exists { // true
-      // Content!
+    // Использование
+    .user-card {
+      @include card {
+        color: #333;
+        font-size: 16px;
+      }
+    }
+
+    .placeholder {
+      @include card;
     }
     ```
 
@@ -334,15 +496,47 @@ content-exists() //=> булево значение
     ```sass
     @use 'sass:meta'
 
-    @mixin debug-content-exists
-      @debug meta.content-exists()
-      @content
+    // Сначала объявляем миксин
+    @mixin card
+      border-radius: 8px
+      padding: 16px
 
+      // Проверяем, есть ли контент в текущем вызове
+      @if meta.content-exists()
+        background: white
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1)
+        @content
+      @else
+        background-color: #f0f0f0
+        border: 2px dashed #999
 
-    @include debug-content-exists // false
-    @include debug-content-exists // true
-      // Content!
+    // Использование
+    .user-card
+      @include card
+        color: #333
+        font-size: 16px
+
+    .placeholder
+      @include card
     ```
+
+```css title="CSS"
+.user-card {
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 16px;
+}
+
+.placeholder {
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f0f0f0;
+  border: 2px dashed #999;
+}
+```
 
 ### feature-exists
 
@@ -389,7 +583,7 @@ feature-exists($feature) //=> булево значение
 
 ```scss
 meta.function-exists($name, $module: null)
-function-exists($name) //=> булево значение
+function-exists($name, $module: null) //=> булево значение
 ```
 
 Возвращает, определена ли функция с именем `$name`, либо как встроенная функция, либо как пользовательская.
