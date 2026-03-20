@@ -74,8 +74,7 @@ selector-append($selectors...) //=> селектор
 
     @debug selector.append("a", ".disabled"); // a.disabled
     @debug selector.append(".accordion", "__copy"); // .accordion__copy
-    @debug selector.append(".accordion", "__copy, __image");
-    // .accordion__copy, .accordion__image
+    @debug selector.append(".accordion", "__copy, __image"); // .accordion__copy, .accordion__image
     ```
 
 === "SASS"
@@ -85,8 +84,7 @@ selector-append($selectors...) //=> селектор
 
     @debug selector.append("a", ".disabled") // a.disabled
     @debug selector.append(".accordion", "__copy") // .accordion__copy
-    @debug selector.append(".accordion", "__copy, __image")
-    // .accordion__copy, .accordion__image
+    @debug selector.append(".accordion", "__copy, __image") // .accordion__copy, .accordion__image
     ```
 
 ### extend
@@ -119,8 +117,9 @@ selector-extend($selector, $extendee, $extender) //=> селектор
 
     @debug selector.extend("a.disabled", "a", ".link"); // a.disabled, .link.disabled
     @debug selector.extend("a.disabled", "h1", "h2"); // a.disabled
-    @debug selector.extend(".guide .info", ".info", ".content nav.sidebar");
+
     // .guide .info, .guide .content nav.sidebar, .content .guide nav.sidebar
+    @debug selector.extend(".guide .info", ".info", ".content nav.sidebar");
     ```
 
 === "SASS"
@@ -130,8 +129,9 @@ selector-extend($selector, $extendee, $extender) //=> селектор
 
     @debug selector.extend("a.disabled", "a", ".link") // a.disabled, .link.disabled
     @debug selector.extend("a.disabled", "h1", "h2") // a.disabled
-    @debug selector.extend(".guide .info", ".info", ".content nav.sidebar")
+
     // .guide .info, .guide .content nav.sidebar, .content .guide nav.sidebar
+    @debug selector.extend(".guide .info", ".info", ".content nav.sidebar")
     ```
 
 ### nest
@@ -183,9 +183,7 @@ selector-parse($selector) //=> селектор
     ```scss
     @use "sass:selector";
 
-    @debug selector.parse(".main aside:hover, .sidebar p");
-    // ((unquote(".main") unquote("aside:hover")),
-    //  (unquote(".sidebar") unquote("p")))
+    @debug selector.parse(".main aside:hover, .sidebar p"); // .main aside:hover, .sidebar p
     ```
 
 === "SASS"
@@ -193,9 +191,7 @@ selector-parse($selector) //=> селектор
     ```sass
     @use "sass:selector"
 
-    @debug selector.parse(".main aside:hover, .sidebar p")
-    // ((unquote(".main") unquote("aside:hover")),
-    //  (unquote(".sidebar") unquote("p")))
+    @debug selector.parse(".main aside:hover, .sidebar p") // .main aside:hover, .sidebar p
     ```
 
 ### replace
@@ -220,8 +216,9 @@ selector-replace($selector, $original, $replacement) //=> селектор
 
     @debug selector.replace("a.disabled", "a", ".link"); // .link.disabled
     @debug selector.replace("a.disabled", "h1", "h2"); // a.disabled
-    @debug selector.replace(".guide .info", ".info", ".content nav.sidebar");
+
     // .guide .content nav.sidebar, .content .guide nav.sidebar
+    @debug selector.replace(".guide .info", ".info", ".content nav.sidebar");
     ```
 
 === "SASS"
@@ -231,8 +228,9 @@ selector-replace($selector, $original, $replacement) //=> селектор
 
     @debug selector.replace("a.disabled", "a", ".link")  // .link.disabled
     @debug selector.replace("a.disabled", "h1", "h2")  // a.disabled
-    @debug selector.replace(".guide .info", ".info", ".content nav.sidebar")
+
     // .guide .content nav.sidebar, .content .guide nav.sidebar
+    @debug selector.replace(".guide .info", ".info", ".content nav.sidebar")
     ```
 
 ### unify
