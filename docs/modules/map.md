@@ -112,8 +112,7 @@ map.deep-remove($map, $key, $keys...) //=> карта
 
     $font-weights: ("regular": 400, "medium": 500, "bold": 700);
 
-    @debug map.deep-remove($font-weights, "regular");
-    // ("medium": 500, "bold": 700)
+    @debug map.deep-remove($font-weights, "regular"); // ("medium": 500, "bold": 700)
     ```
 
 === "SASS"
@@ -123,8 +122,7 @@ map.deep-remove($map, $key, $keys...) //=> карта
 
     $font-weights: ("regular": 400, "medium": 500, "bold": 700)
 
-    @debug map.deep-remove($font-weights, "regular")
-    // ("medium": 500, "bold": 700)
+    @debug map.deep-remove($font-weights, "regular") // ("medium": 500, "bold": 700)
     ```
 
 Если `$keys` не пустой, следует по набору ключей, включая `$key` и исключая последний ключ в `$keys`, слева направо, чтобы найти вложенную карту для обновления.
@@ -190,6 +188,7 @@ map-get($map, $key, $keys...)
 
     ```scss
     @use "sass:map";
+
     $font-weights: ("regular": 400, "medium": 500, "bold": 700);
 
     @debug map.get($font-weights, "medium"); // 500
@@ -200,6 +199,7 @@ map-get($map, $key, $keys...)
 
     ```sass
     @use "sass:map"
+
     $font-weights: ("regular": 400, "medium": 500, "bold": 700)
 
     @debug map.get($font-weights, "medium") // 500
@@ -365,8 +365,7 @@ map-merge($map1, $keys..., $map2) //=> карта
     $light-weights: ("lightest": 100, "light": 300);
     $heavy-weights: ("medium": 500, "bold": 700);
 
-    @debug map.merge($light-weights, $heavy-weights);
-    // ("lightest": 100, "light": 300, "medium": 500, "bold": 700)
+    @debug map.merge($light-weights, $heavy-weights); // ("lightest": 100, "light": 300, "medium": 500, "bold": 700)
     ```
 
 === "SASS"
@@ -377,8 +376,7 @@ map-merge($map1, $keys..., $map2) //=> карта
     $light-weights: ("lightest": 100, "light": 300)
     $heavy-weights: ("medium": 500, "bold": 700)
 
-    @debug map.merge($light-weights, $heavy-weights)
-    // ("lightest": 100, "light": 300, "medium": 500, "bold": 700)
+    @debug map.merge($light-weights, $heavy-weights) // ("lightest": 100, "light": 300, "medium": 500, "bold": 700)
     ```
 
 Если `$keys` не пустой, следует по `$keys`, чтобы найти вложенную карту, предназначенную для объединения. Если какой-либо ключ в `$keys` отсутствует в карте или ссылается на значение, которое не является картой, в этом месте устанавливается пустая карта.
@@ -454,8 +452,7 @@ map-remove($map, $keys...) //=> карта
 
     @debug map.remove($font-weights, "regular"); // ("medium": 500, "bold": 700)
     @debug map.remove($font-weights, "regular", "bold"); // ("medium": 500)
-    @debug map.remove($font-weights, "bolder");
-    // ("regular": 400, "medium": 500, "bold": 700)
+    @debug map.remove($font-weights, "bolder"); // ("regular": 400, "medium": 500, "bold": 700)
     ```
 
 === "SASS"
@@ -465,10 +462,9 @@ map-remove($map, $keys...) //=> карта
 
     $font-weights: ("regular": 400, "medium": 500, "bold": 700)
 
-    @debug map.remove($font-weights, "regular")  // ("medium": 500, "bold": 700)
-    @debug map.remove($font-weights, "regular", "bold")  // ("medium": 500)
-    @debug map.remove($font-weights, "bolder")
-    // ("regular": 400, "medium": 500, "bold": 700)
+    @debug map.remove($font-weights, "regular") // ("medium": 500, "bold": 700)
+    @debug map.remove($font-weights, "regular", "bold") // ("medium": 500)
+    @debug map.remove($font-weights, "bolder") // ("regular": 400, "medium": 500, "bold": 700)
     ```
 
 ## set
@@ -491,8 +487,7 @@ map.set($map, $keys..., $key, $value) //=> карта
 
     $font-weights: ("regular": 400, "medium": 500, "bold": 700);
 
-    @debug map.set($font-weights, "regular", 300);
-    // ("regular": 300, "medium": 500, "bold": 700)
+    @debug map.set($font-weights, "regular", 300); // ("regular": 300, "medium": 500, "bold": 700)
     ```
 
 === "SASS"
@@ -502,8 +497,7 @@ map.set($map, $keys..., $key, $value) //=> карта
 
     $font-weights: ("regular": 400, "medium": 500, "bold": 700)
 
-    @debug map.set($font-weights, "regular", 300)
-    // ("regular": 300, "medium": 500, "bold": 700)
+    @debug map.set($font-weights, "regular", 300) // ("regular": 300, "medium": 500, "bold": 700)
     ```
 
 Если `$keys` переданы, следует по `$keys`, чтобы найти вложенную карту для обновления. Если какой-либо ключ в `$keys` отсутствует в карте или ссылается на значение, которое не является картой, устанавливает значение в этом ключе в пустую карту.
