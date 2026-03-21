@@ -460,7 +460,7 @@ math.sqrt($number) //=> число
 
     @debug math.sqrt(100); // 10
     @debug math.sqrt(math.div(1, 3)); // 0.5773502692
-    @debug math.sqrt(-1); // NaN
+    @debug math.sqrt(-1); // calc(NaN)
     ```
 
 === "SASS"
@@ -470,7 +470,7 @@ math.sqrt($number) //=> число
 
     @debug math.sqrt(100) // 10
     @debug math.sqrt(math.div(1, 3)) // 0.5773502692
-    @debug math.sqrt(-1) // NaN
+    @debug math.sqrt(-1) // calc(NaN)
     ```
 
 ## Тригонометрические функции {#trigonometric-functions}
@@ -581,7 +581,7 @@ math.acos($number) //=> число
     @use 'sass:math';
 
     @debug math.acos(0.5); // 60deg
-    @debug math.acos(2); // NaNdeg
+    @debug math.acos(2); // calc(NaN * 1deg)
     ```
 
 === "SASS"
@@ -590,7 +590,7 @@ math.acos($number) //=> число
     @use 'sass:math'
 
     @debug math.acos(0.5) // 60deg
-    @debug math.acos(2) // NaNdeg
+    @debug math.acos(2) // calc(NaN * 1deg)
     ```
 
 ### asin
@@ -609,7 +609,7 @@ math.asin($number) //=> число
     @use 'sass:math';
 
     @debug math.asin(0.5); // 30deg
-    @debug math.asin(2); // NaNdeg
+    @debug math.asin(2); // calc(NaN * 1deg)
     ```
 
 === "SASS"
@@ -618,7 +618,7 @@ math.asin($number) //=> число
     @use 'sass:math'
 
     @debug math.asin(0.5) // 30deg
-    @debug math.asin(2) // NaNdeg
+    @debug math.asin(2) // calc(NaN * 1deg)
     ```
 
 ### atan
@@ -666,7 +666,8 @@ math.atan2($y, $x) //=> число
     ```scss
     @use 'sass:math';
 
-    @debug math.atan2(-1, 1); // 135deg
+    @debug math.atan2(1, -1); // 135
+    @debug math.atan2(-1, 1); // -45deg
     ```
 
 === "SASS"
@@ -674,7 +675,8 @@ math.atan2($y, $x) //=> число
     ```sass
     @use 'sass:math'
 
-    @debug math.atan2(-1, 1) // 135deg
+    @debug math.atan2(1, -1); // 135
+    @debug math.atan2(-1, 1) // -45deg
     ```
 
 ## Функции единиц {#unit-functions}
@@ -757,10 +759,10 @@ unit($number) //=> строка в кавычках
     ```scss
     @use 'sass:math';
 
-    @debug math.unit(100); // ""
-    @debug math.unit(100px); // "px"
-    @debug math.unit(5px * 10px); // "px*px"
-    @debug math.unit(math.div(5px, 1s)); // "px/s"
+    @debug math.unit(100); // "" (пустая строка)
+    @debug math.unit(100px); // px
+    @debug math.unit(5px * 10px); // px*px
+    @debug math.unit(math.div(5px, 1s)); // px/s
     ```
 
 === "SASS"
@@ -768,10 +770,10 @@ unit($number) //=> строка в кавычках
     ```sass
     @use 'sass:math'
 
-    @debug math.unit(100) // ""
-    @debug math.unit(100px) // "px"
-    @debug math.unit(5px * 10px) // "px*px"
-    @debug math.unit(math.div(5px, 1s)) // "px/s"
+    @debug math.unit(100) // "" (пустая строка)
+    @debug math.unit(100px) // px
+    @debug math.unit(5px * 10px) // px*px
+    @debug math.unit(math.div(5px, 1s)) // px/s
     ```
 
 ## Другие функции {#other-functions}
@@ -798,7 +800,7 @@ math.div($number1, $number2) //=> число
     @debug math.div(1, 2); // 0.5
     @debug math.div(100px, 5px); // 20
     @debug math.div(100px, 5); // 20px
-    @debug math.div(100px, 5s); // 20px/s
+    @debug math.div(100px, 5s); // calc(20px / 1s)
     ```
 
 === "SASS"
@@ -809,7 +811,7 @@ math.div($number1, $number2) //=> число
     @debug math.div(1, 2) // 0.5
     @debug math.div(100px, 5px) // 20
     @debug math.div(100px, 5) // 20px
-    @debug math.div(100px, 5s) // 20px/s
+    @debug math.div(100px, 5s) // calc(20px / 1s)
     ```
 
 ### percentage
@@ -857,8 +859,8 @@ random($limit: null) //=> число
     ```scss
     @use 'sass:math';
 
-    @debug math.random(); // 0.2821251858
-    @debug math.random(); // 0.6221325814
+    @debug math.random(); // случайное число, например: 0.2821251858
+    @debug math.random(); // случайное число, например: 0.6221325814
     ```
 
 === "SASS"
@@ -866,8 +868,8 @@ random($limit: null) //=> число
     ```sass
     @use 'sass:math'
 
-    @debug math.random() // 0.2821251858
-    @debug math.random() // 0.6221325814
+    @debug math.random() // случайное число, например: 0.2821251858
+    @debug math.random() // случайное число, например: 0.6221325814
     ```
 
 Если `$limit` — число больше или равное 1, возвращает случайное целое число от 1 до `$limit`.
