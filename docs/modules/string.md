@@ -17,8 +17,8 @@ quote($string) //=> строка
     ```scss
     @use "sass:string";
 
-    @debug string.quote(Helvetica); // "Helvetica"
-    @debug string.quote("Helvetica"); // "Helvetica"
+    @debug string.quote(Helvetica); // Helvetica
+    @debug string.quote("Helvetica"); // Helvetica
     ```
 
 === "SASS"
@@ -26,8 +26,8 @@ quote($string) //=> строка
     ```sass
     @use "sass:string"
 
-    @debug string.quote(Helvetica) // "Helvetica"
-    @debug string.quote("Helvetica") // "Helvetica"
+    @debug string.quote(Helvetica) // Helvetica
+    @debug string.quote("Helvetica") // Helvetica
     ```
 
 ## index
@@ -71,8 +71,8 @@ str-insert($string, $insert, $index) //=> строка
     ```scss
     @use "sass:string";
 
-    @debug string.insert("Roboto Bold", " Mono", 7); // "Roboto Mono Bold"
-    @debug string.insert("Roboto Bold", " Mono", -6); // "Roboto Mono Bold"
+    @debug string.insert("Roboto Bold", " Mono", 7); // Roboto Mono Bold
+    @debug string.insert("Roboto Bold", " Mono", -6); // Roboto Mono Bold
     ```
 
 === "SASS"
@@ -80,8 +80,8 @@ str-insert($string, $insert, $index) //=> строка
     ```sass
     @use "sass:string"
 
-    @debug string.insert("Roboto Bold", " Mono", 7) // "Roboto Mono Bold"
-    @debug string.insert("Roboto Bold", " Mono", -6) // "Roboto Mono Bold"
+    @debug string.insert("Roboto Bold", " Mono", 7) // Roboto Mono Bold
+    @debug string.insert("Roboto Bold", " Mono", -6) // Roboto Mono Bold
     ```
 
 Если `$index` больше длины строки `$string`, `$insert` добавляется в конец. Если `$index` меньше отрицательной длины строки, `$insert` добавляется в начало.
@@ -91,8 +91,8 @@ str-insert($string, $insert, $index) //=> строка
     ```scss
     @use "sass:string";
 
-    @debug string.insert("Roboto", " Bold", 100); // "Roboto Bold"
-    @debug string.insert("Bold", "Roboto ", -100); // "Roboto Bold"
+    @debug string.insert("Roboto", " Bold", 100); // Roboto Bold
+    @debug string.insert("Bold", "Roboto ", -100); // Roboto Bold
     ```
 
 === "SASS"
@@ -100,8 +100,8 @@ str-insert($string, $insert, $index) //=> строка
     ```sass
     @use "sass:string"
 
-    @debug string.insert("Roboto", " Bold", 100) // "Roboto Bold"
-    @debug string.insert("Bold", "Roboto ", -100) // "Roboto Bold"
+    @debug string.insert("Roboto", " Bold", 100) // Roboto Bold
+    @debug string.insert("Bold", "Roboto ", -100) // Roboto Bold
     ```
 
 ## length
@@ -147,9 +147,9 @@ str-slice($string, $start-at, $end-at: -1) //=> строка
     ```scss
     @use "sass:string";
 
-    @debug string.slice("Helvetica Neue", 11); // "Neue"
-    @debug string.slice("Helvetica Neue", 1, 3); // "Hel"
-    @debug string.slice("Helvetica Neue", 1, -6); // "Helvetica"
+    @debug string.slice("Helvetica Neue", 11); // Neue
+    @debug string.slice("Helvetica Neue", 1, 3); // Hel
+    @debug string.slice("Helvetica Neue", 1, -6); // Helvetica
     ```
 
 === "SASS"
@@ -157,9 +157,9 @@ str-slice($string, $start-at, $end-at: -1) //=> строка
     ```sass
     @use "sass:string"
 
-    @debug string.slice("Helvetica Neue", 11) // "Neue"
-    @debug string.slice("Helvetica Neue", 1, 3) // "Hel"
-    @debug string.slice("Helvetica Neue", 1, -6) // "Helvetica"
+    @debug string.slice("Helvetica Neue", 11) // Neue
+    @debug string.slice("Helvetica Neue", 1, 3) // Hel
+    @debug string.slice("Helvetica Neue", 1, -6) // Helvetica
     ```
 
 ## split
@@ -204,7 +204,7 @@ to-upper-case($string) //=> строка
     ```scss
     @use "sass:string";
 
-    @debug string.to-upper-case("Bold"); // "BOLD"
+    @debug string.to-upper-case("Bold"); // BOLD
     @debug string.to-upper-case(sans-serif); // SANS-SERIF
     ```
 
@@ -213,7 +213,7 @@ to-upper-case($string) //=> строка
     ```sass
     @use "sass:string"
 
-    @debug string.to-upper-case("Bold") // "BOLD"
+    @debug string.to-upper-case("Bold") // BOLD
     @debug string.to-upper-case(sans-serif) // SANS-SERIF
     ```
 
@@ -231,7 +231,7 @@ to-lower-case($string) //=> строка
     ```scss
     @use "sass:string";
 
-    @debug string.to-lower-case("Bold"); // "bold"
+    @debug string.to-lower-case("Bold"); // bold
     @debug string.to-lower-case(SANS-SERIF); // sans-serif
     ```
 
@@ -240,7 +240,7 @@ to-lower-case($string) //=> строка
     ```sass
     @use "sass:string"
 
-    @debug string.to-lower-case("Bold") // "bold"
+    @debug string.to-lower-case("Bold") // bold
     @debug string.to-lower-case(SANS-SERIF) // sans-serif
     ```
 
