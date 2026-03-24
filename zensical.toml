@@ -186,10 +186,6 @@ extra_css = ["styles/extra.css"]
 #
 custom_dir = "overrides"
 
-[project.extra.analytics]
-provider = "clarity"
-property = "vj4lm5j8nb"
-
 # With the "favicon" option you can set your own image to use as the icon
 # browsers will use in the browser title bar or tab bar. The path provided
 # must be relative to the "docs_dir".
@@ -406,6 +402,10 @@ repo = "lucide/smile"
 # ----------------------------------------------------------------------------
 [project.extra]
 generator = false
+
+[project.extra.analytics]
+provider = "clarity"
+property = "vj4lm5j8nb"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
