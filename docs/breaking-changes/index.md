@@ -11,6 +11,8 @@ icon: lucide/newspaper
 
 Эти критические изменения скоро будут выпущены или были недавно выпущены:
 
+* [Смежные составные селекторы](../breaking-changes/adjacent-compounds/), начиная с Dart Sass 1.100.0.
+
 * [Дополнительные имена встроенных CSS-функций](../breaking-changes/function-name/), начиная с Dart Sass 1.98.0
 
 * [Устаревшая функция `if()`](../breaking-changes/if-function/) начиная с Dart Sass 1.95.0
