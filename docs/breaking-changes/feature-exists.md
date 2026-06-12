@@ -9,7 +9,7 @@ icon: lucide/newspaper
 
 Эта функция теперь устарела и будет удалена в Dart Sass 2.0.0. Поскольку Dart Sass теперь является единственной официально поддерживаемой реализацией Sass, и все версии Dart Sass поддерживают все возможности, поддерживаемые `meta.feature-exists()`, все существующие использования этой функции можно безопасно удалить.
 
-Многие новые возможности можно обнаружить с помощью [`meta.function-exists()`](../modules/meta#function-exists), [`meta.mixin-exists()`](../modules/meta#mixin-exists) или [`meta.variable-exists()`](../modules/meta#variable-exists). Другие можно обнаружить с помощью синтаксиса на уровне выражений, например, используя `calc(1) == 1`, чтобы определить, поддерживает ли текущая версия Sass вычисления первого класса.
+Многие новые возможности можно обнаружить с помощью [`meta.function-exists()`](../modules/meta#function-exists), [`meta.mixin-exists()`](../modules/meta#mixin-exists) или [`meta.global-variable-exists()`](../modules/meta#global-variable-exists). Другие можно обнаружить с помощью синтаксиса на уровне выражений, например, используя `calc(1) == 1`, чтобы определить, поддерживает ли текущая версия Sass вычисления первого класса.
 
 ## Переходный период {#transition-period}
 
