@@ -96,6 +96,7 @@ nav = [
         "values/calculations.md",
         "values/functions.md",
         "values/mixins.md",
+        "values/modules.md",
     ]},
     {"Операторы" = [
         "operators/index.md",
