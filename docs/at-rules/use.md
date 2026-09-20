@@ -745,6 +745,61 @@ code {
 
 Файлы CSS, загруженные как модули, не поддерживают специальные возможности Sass и поэтому не могут предоставлять переменные, функции или миксины Sass. Чтобы авторы не писали Sass в своих CSS случайно, все возможности Sass, которые не являются валидным CSS, вызовут ошибки. В остальном CSS будет выведен как есть. Его даже можно [расширять](../at-rules/extend)!
 
+## Динамическая загрузка модулей {#dynamically-loading-modules}
+
+Правило `@use` можно использовать для загрузки модулей только «статически» — то есть модулей, URL которых известны вам во время написания таблицы стилей. Например, нельзя написать `@use "themes/#{$theme-name}"`. Это позволяет Sass, а также любому, кто читает вашу таблицу стилей, определить, откуда на самом деле берутся все модули (а значит, и все их переменные, миксины и функции), просто прочитав таблицу стилей.
+
+Однако это ограничение можно обойти. Функция [`meta.load()`](../modules/meta#load) позволяет загружать модуль «динамически», то есть в качестве URL для загрузки можно передать любое [строковое значение](../values/strings). Но есть один нюанс: к содержимому загруженного таким образом модуля нельзя обращаться напрямую, как это можно делать с помощью `@use`. Вместо этого `meta.load()` возвращает [значение модуля](../values/modules), которое можно передать различным функциям и миксинам в `sass:meta` для доступа к содержимому модуля.
+
+<div class="grid" markdown>
+
+=== "SCSS"
+
+    ```scss title="_themes.scss"
+    @use 'sass:map';
+    @use 'sass:meta';
+
+    @function load-theme($theme-name) {
+      $module: meta.load('themes/#{$theme-name}');
+
+      @each $token in ['foreground', 'background', 'highlight'] {
+        @if not meta.variable-exists($token, $module: $module) {
+          @error "#{$theme} is missing $#{$token}";
+        }
+      }
+
+      @return meta.module-variables($module);
+    }
+    ```
+    ```scss title="themes/_desert.scss"
+    $foreground: #783314;
+    $background: #ec883c;
+    $highlight: #a9c6e6;
+    ```
+
+=== "Sass"
+
+    ```sass title="_themes.sass"
+    @use 'sass:map'
+    @use 'sass:meta'
+
+    @function load-theme($theme-name)
+      $module: meta.load('themes/#{$theme-name}')
+
+      @each $token in ['foreground', 'background', 'highlight']
+        @if not meta.variable-exists($token, $module: $module)
+          @error "#{$theme} is missing $#{$token}"
+
+    @return meta.module-variables($module)
+    ```
+    ```scss title="themes/_desert.sass"
+    $foreground: #783314
+    $background: #ec883c
+    $highlight: #a9c6e6
+    ```
+
+</div>
+
 ## Отличия от `@import` {#differences-from-import}
 
 Правило `@use` предназначено для замены старого [правила `@import`](../at-rules/import), но специально спроектировано для работы по-другому. Вот основные отличия между ними:
