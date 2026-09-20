@@ -103,4 +103,6 @@ Dart Sass также поддерживает [протокол Embedded Sass](h
 
 * **Rust**: Пакет [`sass-embedded`](https://crates.io/crates/sass-embedded) для `crate` запускает Embedded Sass в Rust.
 
+* **.NET**: Пакет [`SassEmbedded.Net`](https://www.nuget.org/packages/EmbeddedSass.Net) запускает Embedded Sass в .NET.
+
 * **PHP**: Пакет [`bugo/sass-embedded-php`](https://github.com/dragomano/sass-embedded-php) добавляет PHP-обёртку для компиляции SCSS в CSS.
