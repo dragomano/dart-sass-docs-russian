@@ -101,7 +101,7 @@ meta.css($module)
     @use "sass:meta";
 
     body.dark {
-      @include meta.css(meta.load("dark-theme/code");
+      @include meta.css(meta.load("dark-theme/code"));
     }
     ```
 
