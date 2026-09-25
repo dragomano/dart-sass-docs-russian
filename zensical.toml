@@ -118,6 +118,7 @@ nav = [
     ]},
     {"Критические изменения" = [
         "breaking-changes/index.md",
+        "breaking-changes/adjacent-compounds.md",
         "breaking-changes/function-name.md",
         "breaking-changes/if-function.md",
         "breaking-changes/with-private.md",
@@ -401,6 +402,40 @@ repo = "lucide/smile"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
+# Zensical включает эти расширения по умолчанию, но любое переопределение
+# секции "markdown_extensions" полностью заменяет стандартный набор.
+# Поэтому здесь перечислены все дефолтные расширения + pymdownx.snippets.
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc.permalink = true
+pymdownx.arithmatex.generic = true
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.magiclink = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.snippets = {}
+pymdownx.superfences.custom_fences = [
+    { name = "mermaid", class = "mermaid" },
+]
+pymdownx.tabbed.alternate_style = true
+pymdownx.tabbed.combine_header_slug = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.tilde = {}
+
 [project.extra]
 generator = false
 
