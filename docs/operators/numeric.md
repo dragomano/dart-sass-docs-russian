@@ -46,21 +46,30 @@ icon: lucide/decimals-arrow-right
 
 Числа с несовместимыми единицами нельзя использовать с операциями сложения, вычитания или модуля.
 
+<div class="grid" markdown>
+
 === "SCSS"
 
     ```scss
     @debug 100px + 10s;
-    //     ^^^^^^^^^^^
-    // Ошибка: несовместимые единицы измерения px и s.
     ```
 
 === "SASS"
 
     ```sass
     @debug 100px + 10s
-    //     ^^^^^^^^^^^
-    // Ошибка: несовместимые единицы измерения px и s.
     ```
+
+```sh title="Ошибка"
+100px and 10s have incompatible units.
+  ╷
+1 │ @debug 100px + 10s;
+  │        ^^^^^^^^^^^
+  ╵
+  - 1:8  root stylesheet
+```
+
+</div>
 
 ## Унарные операторы {#unary-operators}
 

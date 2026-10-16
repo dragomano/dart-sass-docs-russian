@@ -278,12 +278,6 @@ main.content .info, main.content nav.sidebar {
     ```scss
     .alert {
       @extend .message.info;
-      //      ^^^^^^^^^^^^^
-      // Ошибка: пишите `@extend .message, .info` вместо этого.
-
-      @extend .main .info;
-      //      ^^^^^^^^^^^
-      // Ошибка: пишите `@extend .info` вместо этого.
     }
     ```
 
@@ -292,13 +286,47 @@ main.content .info, main.content nav.sidebar {
     ```sass
     .alert
       @extend .message.info
-      //      ^^^^^^^^^^^^^
-      // Ошибка: пишите `@extend .message, .info` вместо этого.
-
-      @extend .main .info
-      //      ^^^^^^^^^^^
-      // Ошибка: пишите `@extend .info` вместо этого.
     ```
+
+```sh title="Ошибка"
+compound selectors may no longer be extended.
+Consider `@extend .message, .info` instead.
+See https://sass-lang.com/d/extend-compound for details.
+
+  ╷
+2 │   @extend .message.info;
+  │           ^^^^^^^^^^^^^
+  ╵
+  - 2:11  root stylesheet
+```
+
+</div>
+
+<div class="grid" markdown>
+
+=== "SCSS"
+
+    ```scss
+    .alert {
+      @extend .main .info;
+    }
+    ```
+
+=== "SASS"
+
+    ```sass
+    .alert
+      @extend .main .info;
+    ```
+
+```sh title="Ошибка"
+complex selectors may not be extended.
+  ╷
+2 │   @extend .main .info;
+  │           ^^^^^^^^^^^
+  ╵
+  - 2:11  root stylesheet
+```
 
 </div>
 
@@ -380,8 +408,6 @@ header .warning li, header .warning aside .notice dd, aside .notice header .warn
     @media screen and (max-width: 600px) {
       .error--serious {
         @extend .error;
-        //      ^^^^^^
-        // Ошибка: ".error" был расширен в @media, но использован вне его.
       }
     }
 
@@ -397,12 +423,27 @@ header .warning li, header .warning aside .notice dd, aside .notice header .warn
     @media screen and (max-width: 600px)
       .error--serious
         @extend .error
-        //      ^^^^^^
-        // Ошибка: ".error" был расширен в @media, но использован вне его.
 
     .error
       border: 1px #f00
       background-color: #fdd
     ```
+
+```sh title="Ошибка"
+You may not @extend selectors across media queries.
+  ╷
+3 │     @extend .error;
+  │     ^^^^^^^^^^^^^^ extension
+  ╵
+  ╷
+1 │ @media screen and (max-width: 600px) {
+  │        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ extension @media
+  ╵
+  ╷
+7 │ .error {
+  │ ━━━━━━ extended selector
+  ╵
+  - 3:5  root stylesheet
+```
 
 </div>

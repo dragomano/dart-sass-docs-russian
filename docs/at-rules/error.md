@@ -30,8 +30,6 @@ Sass упрощает это с помощью правила `@error`, кото
 
     .sidebar {
       @include reflexive-position(top, 12px);
-      //       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      // Ошибка: Свойство top должно быть либо left, либо right.
     }
     ```
 
@@ -42,7 +40,6 @@ Sass упрощает это с помощью правила `@error`, кото
       @if $property != left and $property != right
         @error "Property #{$property} must be either left or right."
 
-
       $left-value: if(sass($property == right): initial; else: $value)
       $right-value: if(sass($property == right): $value; else: initial)
 
@@ -52,24 +49,17 @@ Sass упрощает это с помощью правила `@error`, кото
         left: $right-value
         right: $left-value
 
-
-
     .sidebar
       @include reflexive-position(top, 12px)
-      //       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      // Ошибка: Свойство top должно быть либо left, либо right.
     ```
 
-</div>
-
-Точный формат ошибки и трассировки стека различается в зависимости от реализации и также может зависеть от вашей системы сборки. Вот как это выглядит в Dart Sass при запуске из командной строки:
-
-```sh
-Error: "Property top must be either left or right."
-  ╷
-3 │     @error "Property #{$property} must be either left or right.";
-  │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  ╵
-  example.scss 3:5   reflexive-position()
-  example.scss 19:3  root stylesheet
+```sh title="Ошибка"
+"Property top must be either left or right."
+   ╷
+18 │   @include reflexive-position(top, 12px);
+   │   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+  - 18:3  root stylesheet
 ```
+
+</div>
