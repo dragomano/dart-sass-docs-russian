@@ -88,7 +88,7 @@ map.deep-merge($map1, $map2) //=> карта
     //     "bold": 700
     //   )
     // )
-    @debug map.merge($helvetica-light, $helvetica-heavy);
+    @debug map.merge($helvetica-light, $helvetica-heavy)
     // (
     //   "weights": (
     //     "medium: 500,

@@ -169,7 +169,7 @@ icon: lucide/map
 === "SASS"
 
     ```sass
-    @use "sass:map";
+    @use "sass:map"
 
     $weights: ("light": 300, "medium": 500)
 

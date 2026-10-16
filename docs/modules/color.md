@@ -278,16 +278,16 @@ invert($color, $weight: 100%, $space: null) //=> цвет
     @use 'sass:color';
 
     @debug color.invert(#b37399, $space: rgb); // #4c8c66
-    @debug color.invert(#550e0c, 20%, $space: display-p3); // rgb(103.4937692017, 61.3720912206, 59.430641338)
+    @debug color.invert(#550e0c, 20%, $space: display-p3); // rgb(40.58579184381029%, 24.06748675316639%, 23.30613385801998%)
     ```
 
 === "SASS"
 
     ```sass
-    @use 'sass:color';
+    @use 'sass:color'
 
     @debug color.invert(#b37399, $space: rgb) // #4c8c66
-    @debug color.invert(#550e0c, 20%, $space: display-p3) // rgb(103.4937692017, 61.3720912206, 59.430641338)
+    @debug color.invert(#550e0c, 20%, $space: display-p3) // rgb(40.58579184381029%, 24.06748675316639%, 23.30613385801998%)
     ```
 
 ## is-legacy
@@ -420,7 +420,7 @@ mix($color1, $color2, $weight: 50%, $method: null) //=> цвет
 === "SASS"
 
     ```sass
-    @use 'sass:color';
+    @use 'sass:color'
 
     @debug color.mix(#036, #d2e1dd, $method: rgb) // rgb(105, 138, 161.5)
     @debug color.mix(#036, #d2e1dd, $method: oklch) // rgb(87.864037264, 140.601918773, 154.2876826946)
