@@ -2,7 +2,7 @@ name: yuki-no
 
 on:
   schedule:
-    - cron: "0 0 15 * *" # Every month, 15
+    - cron: "0 0 * * 6" # Every Saturday
   workflow_dispatch: # Manual trigger
 
 jobs:
